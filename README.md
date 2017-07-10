@@ -6,3 +6,5 @@ forecasts for one city and allowing you to switch between different cities to ge
 ![Weather App](./assets/weather_for_city.png)
 
 This tutorial will be added to and amended as we go along.
+
+For now proceed to [the first step](./steps/001-project-best-practices.md)
