@@ -19,3 +19,5 @@ here: https://github.com/wearehive/project-guidelines
 * Try to read and understand each point that is made here. If you do not grasp a concept immediately that is fine.
 * Try to find out more about the concepts that will not make sense immediately by searching for more information.
 * Write down any questions you might have and we will discuss them after you have completed the article. 
+
+Afterwards proceed to [Step 2](./002-project-setup.md)
