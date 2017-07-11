@@ -1,24 +1,22 @@
 # Project Setup
 
-The first step of any new project is to setup the project with all the tools a modern development approach offers
-to have a solid basis to develop, quality-check and rest our frontend. This is a task which traditionally in 
-frontend-development could be quite cumbersome because for each part a lot of different options existed. 
+The first step of any new project is to find a working setup with all the tools a modern frontend development process offers
+to have a solid basis to develop, quality-check and test our frontend. This is a task which can be quite cumbersome, and especially so in frontend-development, beacause a lot of options exist.
 
-Nowadays things have improved and most modern frontend-framework offer some kind of CLI-tool that makes bootstrapping
-a simple project very easy, as it provides you with a selection of tools and configuration that are usually curated 
-by the development team of the framework. Examples of CLI-tools include [`create-react-app`](https://github.com/facebookincubator/create-react-app)
-for React, [vue-cli](https://github.com/vuejs/vue-cli) for VueJS and the one we will use for our project [angular-cli](https://github.com/angular/angular-cli).
+In our case the situation is not as bad, because nowadays most modern frontend-framework offer some kind of CLI-tool that 
+makes bootstrapping a simple project very easy. It provides you with a selection of tools and configuration that are 
+usually curated by the development team of the framework. Examples include [`create-react-app`](https://github.com/facebookincubator/create-react-app) for React, [vue-cli](https://github.com/vuejs/vue-cli) for VueJS and the one we will use for our project: [angular-cli](https://github.com/angular/angular-cli).
 
-For this step of our tutorial we will use `angular-cli` for the initial setup of our project. Then we are going to 
+We will use `angular-cli` for the initial setup of our project. Then we are going to 
 have a look of the tools and configuration it provides for us under the hood. This can be quite significant as the 
 ease of having all that initial project setup taken care for you, can come with the trade-off that you cannot 
-configure everything to your liking. This will probably also prevent you to use any arbitrary tool you read about online.
+configure everything to your liking. This will probably also prevent you to use any arbitrary tool or technique you read about online. With regard to the design-goal of a cli-tools that is considered a feature not a bug.
 
 ## Bootstrap your project with ng-cli
 
 1. Install ng-cli: `$ npm install -g @angular/cli`
-2. Bootstrap a new project: `$ ng new weather-app`. It will create a new folder for you and provide you with some 
-basic project setup
+2. Bootstrap a new project: `$ ng new weather-app`. It will create a new folder with a basic project structure and install your dependencies using `npm` for you.
+3. If you now execute `ng serve` and point your browser to the url mentioned in the output, you should see a message that your app is working.
 
 ## What is provided?
 
