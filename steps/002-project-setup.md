@@ -16,15 +16,15 @@ configure everything to your liking. This will probably also prevent you to use 
 
 1. Install ng-cli: `$ npm install -g @angular/cli`
 2. Bootstrap a new project: `$ ng new weather-app`. It will create a new folder with a basic project structure and install your dependencies using `npm` for you.
-3. If you now execute `ng serve` and point your browser to the url mentioned in the output, you should see a message that your app is working.
+3. If you now execute `ng serve` and point your browser to the url mentioned in the output, you should see a message that your app is working. This is a development-server which will watch all the files in your application folder and update what you see in the browser automatically. 
 
 ## What is provided?
 
 Lets take a moment to examine all the different files and folders that have been created:
 
-![Project Structur](../assets/project_structure.png)
+![Project Structure](../assets/project_structure.png)
 
-`./e2e/*` - This is where all End-2-End-Tests are supposed to go. Similar to AngularJS, Angular uses Protractor for UI-Testing. E2E-Tests are an important part of your overall test-concept and should be significantly less numerous than your Unit-Tests, because they tend to be a lot slower than unit-tests, which does not make them well suited for test-driven-development. This concept is referred to as the test-pyramid and was pioneered by Martin Fowler. More information: https://martinfowler.com/bliki/TestPyramid.html
+`./e2e/*` - This is where all End-2-End-Tests are supposed to go. Similar to AngularJS, Angular uses Protractor for UI-Testing. E2E-Tests are an important part of your overall test-concept. They should be significantly less numerous than your Unit-Tests, because they tend to be a lot slower, which does not make them well suited for test-driven-development. This concept is referred to as the test-pyramid and was pioneered by Martin Fowler. More information: https://martinfowler.com/bliki/TestPyramid.html
 
 `./e2e/tsconfig.e2e.json` - This is a custom configuration for the typescript-compiler for the protractor test-files. This is due to the fact that we want to write the test themselves in typescript, but the protractor-test-runner cannot work with typescript-files by itself. This means that all tests that are written in typescript must be converted to javascript-files before protractor can execute them.
 
@@ -32,11 +32,11 @@ Lets take a moment to examine all the different files and folders that have been
 
 `./e2e/app.e2e-spec.ts` - This file contains the actual assertions you want to run within the UI. As you can see it imports and uses the Page Object-files to get its test-subjects.
 
-`./node_modules` - This is the standard-folder all the dependencies specified in `package.json` will be installed into.
+`./node_modules` - This is the standard-folder all the dependencies specified in `package.json` are installed into.
 
-`./src` - This folder contains all your application-code, plus all configs and assets that are needed at runtime
+`./src` - This folder contains all your application-code, plus all configs and assets that are needed at runtime.
 
-`.angular-cli.json` - This is the configuration for the `angular-cli`-tool. The official documentation for this file is very thin. Accept it as given for now.
+`.angular-cli.json` - This is the configuration for the `angular-cli`-tool. The official documentation for this file is very thin. Accept it as a given for now.
 
 `.editorconfig` - This small file is very important to ensure that all members of a project-team use the same configuration when it comes to the configuration of their IDEs. It defines for example if a press on the TAB-key creates tabs or spaces and how many spaces an indent is. Your IDE needs to support these files and with some IDEs you might need a plugin.
 
@@ -44,9 +44,9 @@ Lets take a moment to examine all the different files and folders that have been
 
 `karma.conf.js` - Karma is the Test-Runner Angular uses. It is basically a tool that takes the files of your test-frameworks, your test-subjects and the files containing your tests into a browser of your choice and lets the browser execute the tests. This file contains the configuration for the test-runner.
 
-`package-lock.json` - This file represents a pretty recent addition to the npm-ecosystem, it holds all the resolved dependencies of your project and all their resolved dependencies. It is supposed to be committed to VCS alongside all other files and guarantees that the installation of all dependencies will be deterministic in other environments. If you want to read more about this file: https://docs.npmjs.com/files/package-lock.json
+`package-lock.json` - This file represents a pretty recent addition to the npm-ecosystem, it holds all the resolved dependencies of your project and all their resolved dependencies. It is supposed to be committed to VCS alongside all other files and guarantees that the installation of all dependencies will be deterministic in other environments. If you want to read more about this: https://docs.npmjs.com/files/package-lock.json
 
-`package.json` - This is the main-file that describes your project to npm. It contains your dependencies, custom scripts, some descriptions and a bit of additional documentation.
+`package.json` - This is the main-file that describes your project to npm. It contains your dependencies, custom scripts and a bit of additional documentation.
 
 `README.md` - The main documentation-file
 
@@ -59,9 +59,9 @@ Lets take a moment to examine all the different files and folders that have been
 
 This might already seem like a lot of visible tools and configuration, but alas it is only the tip of the iceberg as the config for Webpack, the most important and complex tool, is hidden in the dependencies of `angular-cli` itself.
 
-If you have not already done so, now is the perfect time to create a repository for your project and commit what we already have. You can use Github or your private space in our Bitbucket as you like. It is important to push your changes now, because we will "eject" the app in the next step and this makes some changes to your project structure that we want to revert before we start developing for real. 
+If you have not already done so, now is the perfect time to create a repository for your project and commit what we already have. You can use Github or your private space in our Bitbucket as you like. It is important to push your changes now, because we will "eject" the app in the next step and this changes our project structure in a way that we want to revert before we start developing for real. 
 
-"Ejecting" the app means that we will "pull" the configuration that so far has been abstracted away from us out of the `angular-cli`-dependency into the root of our project-structure. This has the advantage that we no again have full control over the configuration of our build and development-tools, but lose the convenience of other people taking care of that for us. If the angular-cli team improves on the webpack-config and we did not eject the app, then getting the benefits will be as easy as running `npm upgrade`. With an ejected app, we have to take care of improving the build process ourselves.
+"Ejecting" the app means that it will "pull" the configuration that so far has been abstracted away from us out of the `angular-cli`-dependency into the root of our project-structure. This has the advantage that we again have full control over the configuration of our build and development-tools, but lose the convenience of other people taking care of that for us. If the angular-cli team improves on the webpack-config and we did not eject the app, then getting those enhancements will be as easy as running `npm upgrade`. With an ejected app, we have to integrate them into the ejected config ourselves.
 
 Even if it is nice to have the complexities of the webpack-configuration taken care of by a tool it is still vital to understand how webpack works and what the configuration looks like, in case you run into any problems. This is what we will do now.
 
@@ -71,14 +71,14 @@ So lets eject the app:
 
 This has three effects:
 
-* A new file is generated in the root of your project the `webpack.config.js`. This is the webpack config file that configures the build process and your local development server. We will take a closer look at it in a few moments
-* Take a look at `package.json`, all dependencies required by webpack have been added as `devDependencies`. Also the nom scripts have been altered to not use the `ng`-binary but the underlying tools.
+* A new file is generated in the root of your project called `webpack.config.js`. This is the webpack config file that configures the build process and your local development server. We will take a closer look at it in a few moments
+* Take a look at `package.json`: All dependencies required by webpack have been added as `devDependencies`. Also the npm scripts have been altered to not use the `ng`-binary but the underlying tools.
 * `.angular.cli.json` got a new field under `project` which indicates now that the project has been ejected. 
 
 ## The Webpack-Config
 
 ### What is Webpack
-Webpack is one of the most important tools in current frontend-development workflows. It allows to treat all your frontend dependencies (HTML, Javascript, CSS, Images, Font-Files, etc.) as modules that get bundled together or are dynamically loaded at runtime, that's why the call it a "module bundler" 
+Webpack is one of the most important tools in current frontend-development workflows. It allows to treat all your frontend dependencies (HTML, Javascript, CSS, Images, Font-Files, etc.) as modules that get bundled together or are dynamically loaded at runtime, that's why they call it a "module-bundler" 
 
 **Tasks**
 
