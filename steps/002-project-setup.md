@@ -59,5 +59,37 @@ Lets take a moment to examine all the different files and folders that have been
 
 ## What is hidden?
 
-This might already seem like a lot of visible tools and configuration, but alas it is only the tip of the iceberg as the config for the most important tool is hidden deep in the dependencies of `angular-cli` itself.
+This might already seem like a lot of visible tools and configuration, but alas it is only the tip of the iceberg as the config for Webpack, the most important and complex tool, is hidden in the dependencies of `angular-cli` itself.
 
+If you have not already done so, now is the perfect time to create a repository for your project and commit what we already have. You can use Github or your private space in our Bitbucket as you like. It is important to push your changes now, because we will "eject" the app in the next step and this makes some changes to your project structure that we want to revert before we start developing for real. 
+
+"Ejecting" the app means that we will "pull" the configuration that so far has been abstracted away from us out of the `angular-cli`-dependency into the root of our project-structure. This has the advantage that we no again have full control over the configuration of our build and development-tools, but lose the convenience of other people taking care of that for us. If the angular-cli team improves on the webpack-config and we did not eject the app, then getting the benefits will be as easy as running `npm upgrade`. With an ejected app, we have to take care of improving the build process ourselves.
+
+Even if it is nice to have the complexities of the webpack-configuration taken care of by a tool it is still vital to understand how webpack works and what the configuration looks like, in case you run into any problems. This is what we will do now.
+
+So lets eject the app:
+
+`$ ng eject`
+
+This has three effects:
+
+* A new file is generated in the root of your project the `webpack.config.js`. This is the webpack config file that configures the build process and your local development server. We will take a closer look at it in a few moments
+* Take a look at `package.json`, all dependencies required by webpack have been added as `devDependencies`. Also the nom scripts have been altered to not use the `ng`-binary but the underlying tools.
+* `.angular.cli.json` got a new field under `project` which indicates now that the project has been ejected. 
+
+## The Webpack-Config
+
+### What is Webpack
+Webpack is one of the most important tools in current frontend-development workflows. It allows to treat all your frontend dependencies (HTML, Javascript, CSS, Images, Font-Files, etc.) as modules that get bundled together or are dynamically loaded at runtime, that's why the call it a "module bundler" 
+
+**Tasks**
+
+* Read this introduction about webpack to get a general idea about what it is for and why it is a good idea: https://survivejs.com/webpack/introduction/
+* Then open `webpack.config.js` and try to understand what all the individual parts do. You can ignore the imports at the top of the file and start with the `module.exports`-statement (probably around line 60). You can use the first few chapters of the linked book for this. The book is written in a tutorial style, building a project as you go along. You do not need to do that here because `angular-cli` has already built it for us. Instead try to understand the concepts and general ideas:
+
+    * https://survivejs.com/webpack/developing/
+    * https://survivejs.com/webpack/styling/
+    * https://survivejs.com/webpack/loading/
+    * https://survivejs.com/webpack/building/
+
+* If the book fails to answer some of your questions, we can answer them together once you are done.
