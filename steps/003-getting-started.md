@@ -63,7 +63,8 @@ app, as it is composed of three other components.
 
 **Task**
 
-Build the five components mentioned above and make them display the current temperature and weather in Berlin
+Build the five components mentioned above and make them display the current temperature and weather in Berlin.
+Do not worry about routing, just build everything under the root-url.
 
 **How to do it**
 
