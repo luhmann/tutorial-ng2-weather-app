@@ -45,7 +45,7 @@ Possible components we can identify in this part of the app are:
 * `<city>`: The text "Berlin"
 * `<weather-description>`: The text "Teilweise bewölkt"
 * `<degrees>`: The text "19°"
-* `<weather-shortinfo>`: The combination of <city>, <weather-description> and <degrees>
+* `<weather-shortinfo>`: The combination of `<city>`, `<weather-description>` and `<degrees>`
 
 (If you do not like the names feel free to use better ones)
 
