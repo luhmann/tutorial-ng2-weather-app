@@ -62,6 +62,7 @@ and with a drop shadow), while the `weather-shortinfo`-component might potential
 app, as it is composed of three other components. 
 
 **Task**
+
 Build the five components mentioned above and make them display the current temperature and weather in Berlin
 
 **How to do it**
