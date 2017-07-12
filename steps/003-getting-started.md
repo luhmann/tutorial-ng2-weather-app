@@ -55,7 +55,7 @@ We can also already identify how we me might reuse some of these components in o
 
 The `<weather-shortinfo>`-component from above highlights another very important concept: composability. 
 Just like traditional HTML-Tags you can nest components into each other and create new components of increasing specificity. 
-This allows a very granular approach to structuring your frontend-apps and allows for different levels of reusability. 
+This allows for a very granular approach to structuring your frontend-apps with different levels of reusability. 
 The `<city>`-component might be highly reusable, because in 
 essence it represents just a very particular way of formatting a text (3rem Helvetica Neue light in a white color
 and with a drop shadow), while the `weather-shortinfo`-component might potentially only exist in one place within your
