@@ -17,27 +17,29 @@ Think for a moment about how you would structure an app like this.
 
 In frontend development you usually have some form of visual design, when you start developing a new app. This is a good
 starting point for the breakdown process. 
-In the app we want to build one global distinction between its parts is clearly visible as you can instantly make out
-different screens: 
+Within the screenshot above we can see two different screens of this app: 
 
 * One on the left which shows you the weather information for a single city, in this case Berlin
 * The other which is a list of cities just showing the name of the city, the current local time and the current temperature
 
-Between the two screens have no visible elements in the same places, we can assume that these are different "pages".
-In web development this usually means that we are going to use different URLs to access them. Below that level,
-it is a matter of separating different parts of the interface into user stories that fit within one screen. We also
-want to add to the app feature by feature instead of releasing half-finished work.
+The two screens share no elements in exactly the same configuration, so we can assume that they are different "pages".
+In web development this usually means that we are going to use different URLs to access them. Different URLS are one 
+useful high-level conceptually distinction naturally existent in a well conceptualized app, so you can use it to divide
+your work. Below that level, it is a matter of separating different parts of any one page into user stories 
+that fit within one sprint and are well defined. We also want to add to the app feature by feature instead of releasing 
+half-finished work. So we will not separate for example writing the markup and writing the styles.
 
 The top-left area of the left screen seems like a good candidate for our first unit of work: 
 
 ![First Step](../assets/weather_for_city_current.png)
 
-The basic building blocks of modern frontend-development are "components". A component
+To break it down we can use one the basic conceptual building blocks of modern frontend-development: components. A component
 is a part of a user interface that you can potentially use in more than one place. Whenever you can reuse a component
-you increase your changes for greater consistency across your interfaces. If you want to know more about this approach,
+you increase your changes for greater consistency across your interfaces. And every modern frontend framework is structured
+around components. Angular is no exception. If you want to know more about the general concept,
 you can read a good introduction here: https://derickbailey.com/2015/08/26/building-a-component-based-web-ui-with-modern-javascript-frameworks/
 
-Possible components for this part of the app are:
+Possible components we can identify in this part of the app are:
 
 * `<weather-mood>`: The background displaying a fullscreen impression of the current weather situation (might be animated)
 * `<city>`: The text "Berlin"
@@ -45,13 +47,16 @@ Possible components for this part of the app are:
 * `<degrees>`: The text "19°"
 * `<weather-shortinfo>`: The combination of <city>, <weather-description> and <degrees>
 
-We can also identify how these components might be reused in the future:
+(If you do not like the names feel free to use better ones)
+
+We can also already identify how we me might reuse some of these components in other areas of our interface:
 
 ![First Step](../assets/screens_reuse.png)
 
-The last component highlights another very important concept: composability. Just like traditional HTML-Tags you can
-nest components into each other and create new components. This allows a very granular approach to structuring your
-frontend-apps and different levels of reusability. The `<city>`-component might be highly reusable, because in 
+The `<weather-shortinfo>`-component from above highlights another very important concept: composability. 
+Just like traditional HTML-Tags you can nest components into each other and create new components of increasing specificity. 
+This allows a very granular approach to structuring your frontend-apps and allows for different levels of reusability. 
+The `<city>`-component might be highly reusable, because in 
 essence it represents just a very particular way of formatting a text (3rem Helvetica Neue light in a white color
 and with a drop shadow), while the `weather-shortinfo`-component might potentially only exist in one place within your
 app, as it is composed of three other components. 
