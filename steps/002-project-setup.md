@@ -91,3 +91,5 @@ Webpack is one of the most important tools in current frontend-development workf
     * https://survivejs.com/webpack/building/
 
 * If the book fails to answer some of your questions, we can answer them together once you are done.
+
+Proceed to [Step 3](./003-getting-started.md)
