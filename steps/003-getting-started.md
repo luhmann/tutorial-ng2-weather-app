@@ -26,8 +26,10 @@ Within the screenshot above we can see two different screens of this app:
 
 The two screens share no elements in exactly the same configuration, so we can assume that they are different "pages".
 In web development this usually means that we are going to use different URLs to access them. Different URLS are one 
-useful high-level conceptually distinction naturally existent in a well conceptualized app, so you can use it to divide
-your work. Below that level, it is a matter of separating different parts of any one page into user stories 
+useful high-level, conceptual distinction existing naturally in a well conceptualized app. So you can use it as a first 
+rough measurement to divide your app into smaller pieces. 
+
+Below that level, it is a matter of separating different parts of any one page into user stories 
 that fit within one sprint and are well defined. We also want to add to the app feature by feature instead of releasing 
 half-finished work. So we will not separate for example writing the markup and writing the styles.
 
