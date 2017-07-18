@@ -9,11 +9,13 @@ So lets have a look at what we want to build:
 
 In every development work no matter if backend or frontend you begin by conceptually breaking down the app
 into smaller parts. This serves multiple purposes: First it makes the work better organizable. This is usually expressed
-in user stories and what you do in groomings and plannings. Second the the structure you find usually will also often serve
-as the organizing principle of your code.  It will aso help you in not repeating yourself as you identify components 
-that appear in more than one place.
+in user stories and what you do in groomings and plannings. Second the structure you find usually will also often serve
+as the organizing principle of your code. So if you identify features that are then implemented in certain user stories,
+often times you will organize your code based on those features. Breaking down the work in entities will aso help you 
+in not repeating yourself as you identify components that appear in more than one place and then can just reuse them
+consequently.
 
-Think for a moment about how you would structure an app like this.
+So with this in mind think for a moment how you would roughly structure an app such as the one we are trying to develop.
 
 In frontend development you usually have some form of visual design, when you start developing a new app. This is a good
 starting point for the breakdown process. 
