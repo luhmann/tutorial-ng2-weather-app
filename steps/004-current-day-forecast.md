@@ -13,7 +13,7 @@ The next few components we want to build are the display of the current day of t
 
 **How to do it**
 * You already have the information for the minimum and maximum temperatures from the original call for the current weather information. You will need to add them to the data-object you return from your resource-service
-* In the screenshot you can see that an hourly forecast for the current day is provided. The API we are currently using, does not offer this kind of information, but does have an endpoint that provides a three-hourly-forecast: https://openweathermap.org/forecast5. You will need to connect that endpoint and query it for the required data. 
+* In the screenshot you can see that an hourly forecast for the current day is provided. The API we are currently using, does not offer this kind of information, but does have an endpoint that provides a three-hourly-forecast: https://openweathermap.org/forecast5. You will need to connect that endpoint and query it for the required data. It is okay that we cannot display hourly forecasts, the three-hour data suffices 
 * As we now have start aggregating weather data from a city from more than one API-endpoint, you might want to build another Service that holds the weather data from all endpoints and uses the resource-service you already built to get that data:
 
     So you would go from this architecture:
