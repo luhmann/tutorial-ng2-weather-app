@@ -19,4 +19,5 @@ built earlier.
 **How to do it**
 * We need yet another endpoint from the OpenWeatherMapAPI to get a forecast for the next days: https://openweathermap.org/forecast16.
 It contains all the information we need for the next days in an array.
-* Write a wrapper-component for one row of weather data and reuse your earlier components as shown above
+* Write a wrapper-component for one row of weather data and reuse your earlier components as shown above.
+* Then write another wrapper component for the whole list that is able to get the data from the API as we have seen before.
