@@ -37,5 +37,6 @@ To this:
 ```
 
 * The OpenWeatherMap-API also does not provide us with chance of precipitation so we will leave out that information (marked in the screenshot with an x)
-* We also need icons as shown in the screenshots. Our chosen API does provide icons but they are not very attractive. You can replace them with these: http://adamwhitcroft.com/climacons/. Use the svg-files. You can use them in image tags, or as svg is just an xml format use them directly in your html-templates
+* We also need icons as shown in the screenshots. Our chosen API does provide icons but they are not very attractive. You can replace them with these: http://adamwhitcroft.com/climacons/. Use the svg-files. You can use them in image tags, or as svg is just an xml format use them directly in your html-templates. You can then map the weather-condition-id we already use for the `<weather-mood>`-component to the corresponding icon.
+* Do not forget to write tests.
 
