@@ -1,5 +1,4 @@
 ## Design in Frontend-Development
-@(Programming)
 
 It is said that there are two types of front-end-engineers: Javascript-Developers and Designers. While the craft of the 
 first group is very much that of the traditional Software-Engineer whose favorite programming language happens to be
